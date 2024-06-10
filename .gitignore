@@ -1,0 +1,10 @@
+data/glove.6B/glove.6B.zip
+data/GoogleNews-vectors-negative300.bin.gz
+data/glove.6B/glove.6B.50d.txt
+data/glove.6B/glove.6B.100d.txt
+data/glove.6B/glove.6B.200d.txt
+data/glove.6B/glove.6B.300d.txt
+model/dart.doc2vec
+model/dart.doc2vec.syn1neg.npy
+model/dart.doc2vec.wv.vectors.npy
+model/eng_w2v
