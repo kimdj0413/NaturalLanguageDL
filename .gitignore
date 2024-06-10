@@ -8,3 +8,13 @@ model/dart.doc2vec
 model/dart.doc2vec.syn1neg.npy
 model/dart.doc2vec.wv.vectors.npy
 model/eng_w2v
+data/alice.txt
+data/ArticlesApril2018.csv
+data/dart.csv
+data/Iris.csv
+data/list.pkl
+data/movies_metadata.csv
+data/news_df.csv
+data/ratings.txt
+data/recommendation_using_embedding.csv
+data/ted_en-20160408.xml
