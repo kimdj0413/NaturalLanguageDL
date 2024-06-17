@@ -136,7 +136,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.callbacks import EarlyStopping, ModelCheckpoint
 
 embedding_dim = 100
-hidden_units = 128
+hidden_units = 256
 
 model = Sequential()
 model.add(Embedding(vocab_size, embedding_dim))
