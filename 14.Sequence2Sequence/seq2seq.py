@@ -93,3 +93,14 @@ encoder_inputs = Input(shape=(None, src_vocab_size))
 encoder_lstm = LSTM(units=256, return_state=True)
 encoder_outputs, state_h, state_c = encoder_lstm(encoder_inputs)
 encoder_states = [state_h, state_c]
+
+decoder_inputs = Input(shape=(None, tar_vocab_size))
+decoder_lstm = LSTM(units=256, return_sequences=True, return_state=True)
+decoder_outputs,_,_=decoder_lstm(decoder_inputs, initial_state=encoder_states)
+decoder_softmax__layer = Dense(tar_vocab_size, activation='softmax')
+decoder_outputs = decoder_softmax__layer(decoder_outputs)
+
+model = Model([encoder_inputs, decoder_inputs], decoder_outputs)
+model.compile(optimizer="rmsprop", loss="categorical_crossentropy")
+
+model.fit(x=[encoder_input, decoder_input], y=decoder_target, batch_size=64, epochs=40, validation_split=0.2)
