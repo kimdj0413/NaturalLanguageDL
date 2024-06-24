@@ -48,17 +48,17 @@ def transformer(vocab_size, num_layers, dff,
 
     return tf.keras.Model(inputs=[inputs, dec_inputs], outputs=outputs, name=name)
 
-small_transformer = transformer(
-    vocab_size = 9000,
-    num_layers = 4,
-    dff = 512,
-    d_model = 128,
-    num_heads = 4,
-    dropout = 0.3,
-    name="small_transformer")
+# small_transformer = transformer(
+#     vocab_size = 9000,
+#     num_layers = 4,
+#     dff = 512,
+#     d_model = 128,
+#     num_heads = 4,
+#     dropout = 0.3,
+#     name="small_transformer")
 
-tf.keras.utils.plot_model(
-    small_transformer, to_file='small_transformer.png', show_shapes=True)
+# tf.keras.utils.plot_model(
+#     small_transformer, to_file='small_transformer.png', show_shapes=True)
 
 def loss_function(y_true, y_pred):
   y_true = tf.reshape(y_true, shape=(-1, _MAX_LENGTH - 1))
@@ -85,9 +85,9 @@ class CustomSchedule(tf.keras.optimizers.schedules.LearningRateSchedule):
     arg2 = step * (self.warmup_steps**-1.5)
 
     return tf.math.rsqrt(self.d_model) * tf.math.minimum(arg1, arg2)
-sample_learning_rate = CustomSchedule(d_model=128)
+# sample_learning_rate = CustomSchedule(d_model=128)
 
-plt.plot(sample_learning_rate(tf.range(200000, dtype=tf.float32)))
-plt.ylabel("Learning Rate")
-plt.xlabel("Train Step")
-Text(0.5, 0, 'Train Step')
+# plt.plot(sample_learning_rate(tf.range(200000, dtype=tf.float32)))
+# plt.ylabel("Learning Rate")
+# plt.xlabel("Train Step")
+# Text(0.5, 0, 'Train Step')
